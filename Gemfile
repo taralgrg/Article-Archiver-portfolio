@@ -18,7 +18,6 @@ group(:development,:test) do
   gem("shoulda-matchers")
   gem("rspec")
   gem("capybara")
-  gem("pry")
   gem("foreman")
   gem ('font-awesome-less')
 
