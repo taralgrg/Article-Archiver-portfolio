@@ -1,0 +1,23 @@
+<%= @nav %>
+<h1>Welcome, <%=@user.name%>!</h1>
+
+<form id="search" action="/search">
+  <label>Search:</label>
+  <input type="text" name="search" required=true/>
+  <label>by:</label>
+  <select id="search_option" name="search_option">
+      <option value="tag">tag</option>
+      <option value="title">title</option>
+      <option value="user_name">user name</option>
+  </select>
+  <button>Search</button>
+</form>
+
+<h2>The list of bookmark below:</h2>
+<% if @articles.any? %>
+  <ul>
+    <% @articles.each do |article| %>
+      <li><img class = "article-image" src="<%= article.image%>" alt="image"> <%= article.title%>, <a href="<%= article.link%>"><%= article.link%></a> , shared_by <%= article.shared_by%> | tags: <% article.tags.each do |tag| %><%= tag.name%><% end %></li>
+    <% end %>
+  </ul>
+<% end %>
