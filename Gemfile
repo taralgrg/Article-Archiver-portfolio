@@ -1,6 +1,5 @@
 source("https://rubygems.org")
 
-gem 'slack-ruby-bot'
 gem("sinatra-contrib", :require => "sinatra/reloader")
 gem("sinatra-activerecord")
 gem("rake")
